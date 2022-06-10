@@ -17,28 +17,37 @@ function App() {
     "polyatomic nonmetal" : "#3d9ef5",
   }
   return (
-    <div className="table">
-      {data.elements.map((element) => {
-        return (
-          <div className="element" 
-            key={ element.name}  
-            style={
-              { 
-                gridColumn: element.xpos, 
-                gridRow: element.ypos, 
-                borderColor: colorMap[element.category], 
-                color: colorMap[element.category] 
+    <>
+      <div className="table">
+        { data.elements.map((element) => {
+          return (
+            <div className="element" 
+              key={ element.name}  
+              style={
+                { 
+                  gridColumn: element.xpos, 
+                  gridRow: element.ypos, 
+                  borderColor: colorMap[element.category], 
+                  color: colorMap[element.category] 
+                }
               }
-            }
-          > 
-            <div className='number'> {element.number} </div>
-            <div className='symbol'> {element.symbol} </div>
-            <div className='name'> {element.name} </div>
-
+            > 
+              <div className='number'> {element.number} </div>
+              <div className='symbol'> {element.symbol} </div>
+              <div className='name'> {element.name} </div>
+            </div>
+          )
+        })}
+      </div>
+      <div className='key'>
+        {Object.entries(colorMap).map(([key, value]) => (
+          <div className="key-entry" key={key}> 
+            <h6> {key.toUpperCase()} </h6>
+            <div className='color-block' style={{backgroundColor : value}}></div>          
           </div>
-        )
-      })}
-    </div>
+        ))}
+      </div>
+    </>
   );
 }
 
