@@ -1,5 +1,6 @@
 import './Styles/App.css';
 import data from "./Data/PeriodicTable.json"
+import { Element } from './Element';
 
 function App() {
 
@@ -43,7 +44,8 @@ function App() {
         {Object.entries(colorMap).map(([key, value]) => (
           <div className="key-entry" key={key}> 
             <h6> {key.toUpperCase()} </h6>
-            <div className='color-block' style={{backgroundColor : value}}></div>          
+            <div className='color-block' style={{backgroundColor : value}}></div>
+
           </div>
         ))}
       </div>

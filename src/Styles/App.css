@@ -14,14 +14,100 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.master-element {
+  border: solid 1px;
+  margin: 1.25px;
+  cursor: pointer;
+  height: 320px;
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: hsl(218, 31%, 15%);
+
+}
+
 .element {
   border: solid 1px;
   margin: 1.25px;
-  padding: 3px;
+  padding: 3.5px;
+  cursor: pointer;
 }
 
-.element:hover{
-  transform: translate(0, -10px);
+
+@-webkit-keyframes element 
+{
+  15% 
+  {
+    -webkit-transform: translateX(5px);
+    transform: translateX(5px);
+  }
+
+  30% {
+    -webkit-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+
+  50% {
+    -webkit-transform: translateX(3px);
+    transform: translateX(3px);
+  }
+
+  65% {
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+  }
+
+  80% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+  @keyframes element {
+
+    15% {
+      -webkit-transform: translateX(5px);
+      transform: translateX(5px);
+    }
+  
+    30% {
+      -webkit-transform: translateX(-5px);
+      transform: translateX(-5px);
+    }
+  
+    50% {
+      -webkit-transform: translateX(3px);
+      transform: translateX(3px);
+    }
+  
+    65% {
+      -webkit-transform: translateX(-3px);
+      transform: translateX(-3px);
+    }
+  
+    80% {
+      -webkit-transform: translateX(2px);
+      transform: translateX(2px);
+    }
+  
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+}
+
+.element:hover {
+  -webkit-animation: element 1s ease;
+  animation: element 1s ease;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
 }
 
 .number{
